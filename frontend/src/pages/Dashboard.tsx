@@ -78,12 +78,12 @@ const Dashboard: React.FC = () => {
     }
   };
 
-  // Get recent tasks
+  
   const recentTasks = [...tasks]
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     .slice(0, 5);
 
-  // Get tasks due soon (within next 7 days)
+  
   const tasksdueSoon = tasks
     .filter(task => {
       if (!task.dueDate) return false;
@@ -139,9 +139,9 @@ const Dashboard: React.FC = () => {
           ))}
         </div>
 
-        {/* Recent Tasks and Due Soon */}
+  
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Recent Tasks */}
+         
           <div className={`p-6 rounded-xl ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800' : 'bg-white shadow-lg'} border`}>
             <h2 className="text-xl font-semibold mb-4">Recent Tasks</h2>
             <div className="space-y-4">
@@ -171,7 +171,7 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* Tasks Due Soon */}
+        
           <div className={`p-6 rounded-xl ${theme === 'dark' ? 'bg-slate-900/50 border-slate-800' : 'bg-white shadow-lg'} border`}>
             <h2 className="text-xl font-semibold mb-4">Due Soon</h2>
             <div className="space-y-4">
