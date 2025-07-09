@@ -36,7 +36,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const userData = await authService.login({ email, password });
       setUser(userData);
-      // Force a synchronous state update before navigation
+      
       await Promise.resolve();
       navigate('/dashboard', { replace: true });
     } catch (error) {
@@ -52,7 +52,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const userData = await authService.register({ name, email, password });
       setUser(userData);
-      // Force a synchronous state update before navigation
+   
       await Promise.resolve();
       navigate('/dashboard', { replace: true });
     } catch (error) {
@@ -69,7 +69,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     navigate('/login', { replace: true });
   };
 
-  // Check for stored user data on mount
+  
   useEffect(() => {
     const storedUser = authService.getCurrentUser();
     if (storedUser) {
@@ -84,7 +84,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   );
 };
 
-// useAuth hook
+
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (!context) {
