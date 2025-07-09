@@ -57,16 +57,16 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarOpen, isMobile,
         </button>
       )}
 
-      {/* Center Title */}
+     
       <div className="flex-1 flex justify-center">
         <h1 className={`text-xl font-semibold ${theme === 'dark' ? 'text-white' : 'text-white'}`}>
           Task Management
         </h1>
       </div>
 
-      {/* Right section with theme toggle, notifications and profile */}
+    
       <div className="flex items-center space-x-2 sm:space-x-3">
-        {/* Theme Toggle */}
+    
         <button 
           onClick={toggleTheme}
           className={`p-2 rounded-lg transition-colors ${
@@ -83,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarOpen, isMobile,
           )}
         </button>
 
-        {/* Notifications */}
+       
         <button className={`p-2 rounded-lg transition-colors relative ${
           theme === 'dark'
             ? 'text-gray-400 hover:text-white hover:bg-slate-800'
@@ -93,7 +93,6 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarOpen, isMobile,
           <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>
 
-        {/* Profile Section */}
         <div className="flex items-center space-x-3 relative">
           <div className="hidden md:block text-right">
             <p className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-white'}`}>
@@ -114,7 +113,6 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isSidebarOpen, isMobile,
             <User className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          {/* Profile Dropdown Menu */}
           {showProfileMenu && (
             <div ref={menuRef} 
                  className={`absolute right-0 top-12 sm:top-14 w-56 sm:w-64 md:w-72 rounded-xl
