@@ -53,14 +53,14 @@ const AuthPage: React.FC = () => {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
     
-    // Email validation
+  
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email';
     }
     
-    // Password validation
+    
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 6) {
@@ -71,7 +71,7 @@ const AuthPage: React.FC = () => {
       newErrors.password = 'Password must contain at least one number';
     }
     
-    // Confirm password validation (for registration)
+  
     if (!isLogin) {
       if (!formData.confirmPassword) {
         newErrors.confirmPassword = 'Please confirm your password';
@@ -158,7 +158,7 @@ const AuthPage: React.FC = () => {
         )}
       </div>
 
-      {/* Password Field */}
+    
       <div className="transform transition-all duration-200 hover:scale-[1.01]">
         <label className="block text-white text-sm font-semibold mb-2 tracking-wide">
           Password
@@ -194,7 +194,7 @@ const AuthPage: React.FC = () => {
         )}
       </div>
 
-      {/* Submit Button */}
+     
       <button
         type="submit"
         disabled={isLoading}
@@ -209,14 +209,14 @@ const AuthPage: React.FC = () => {
         <span>{isLoading ? 'Processing...' : 'Login'}</span>
       </button>
 
-      {/* General Error Message */}
+
       {errors.general && (
         <div className="text-center">
           <p className="text-red-400 text-sm">{errors.general}</p>
         </div>
       )}
 
-      {/* Forgot Password Link */}
+      
       <div className="text-center mt-6">
         <a
           href="#"
@@ -232,7 +232,7 @@ const AuthPage: React.FC = () => {
   const RegisterForm = () => {
     return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Name Field */}
+     
       <div className="transform transition-all duration-200 hover:scale-[1.01]">
         <label className="block text-white text-sm font-semibold mb-2 tracking-wide">
           Name
@@ -276,7 +276,7 @@ const AuthPage: React.FC = () => {
         )}
       </div>
 
-      {/* Password Field */}
+    
       <div className="transform transition-all duration-200 hover:scale-[1.01]">
         <label className="block text-white text-sm font-semibold mb-2 tracking-wide">
           Password
@@ -348,7 +348,7 @@ const AuthPage: React.FC = () => {
         )}
       </div>
 
-      {/* Submit Button */}
+    
       <button
         type="submit"
         disabled={isLoading}
