@@ -85,10 +85,10 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
-      {/* Backdrop */}
+     
       <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onClick={onClose} />
 
-      {/* Modal */}
+    
       <div className="flex min-h-screen items-center justify-center p-4">
         <div className="relative w-full max-w-md transform rounded-xl bg-slate-900 p-6 shadow-xl transition-all">
           <div className="flex items-center justify-between mb-4">
@@ -104,7 +104,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Title */}
+            
             <div>
               <label htmlFor="title" className="block text-sm font-medium text-gray-400 mb-1">
                 Title <span className="text-red-500">*</span>
@@ -121,7 +121,6 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
               />
             </div>
 
-            {/* Description */}
             <div>
               <label htmlFor="description" className="block text-sm font-medium text-gray-400 mb-1">
                 Description
@@ -137,7 +136,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
               />
             </div>
 
-            {/* Due Date */}
+           
             <div>
               <label htmlFor="dueDate" className="block text-sm font-medium text-gray-400 mb-1">
                 Due Date
@@ -152,7 +151,6 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
               />
             </div>
 
-            {/* Priority */}
             <div>
               <label htmlFor="priority" className="block text-sm font-medium text-gray-400 mb-1">
                 Priority
@@ -170,7 +168,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
               </select>
             </div>
 
-            {/* Status */}
+            
             <div>
               <label htmlFor="status" className="block text-sm font-medium text-gray-400 mb-1">
                 Status
@@ -188,11 +186,11 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
               </select>
             </div>
 
-            {/* Subtasks Section */}
+          
             <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-400">Subtasks</label>
               
-              {/* Add new subtask input */}
+              
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -212,7 +210,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ isOpen, onClose, onSubmit, task }
                 </button>
               </div>
 
-              {/* Subtasks list */}
+           
               <div className="space-y-2 mt-2">
                 {subtasks.map(subtask => (
                   <div key={subtask.id} className="flex items-center gap-2 bg-slate-800 p-2 rounded-lg">
