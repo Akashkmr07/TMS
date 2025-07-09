@@ -19,7 +19,6 @@ const Settings = () => {
       </div>
 
       <div className="grid gap-6">
-        {/* Profile Settings Card */}
         <div className={`p-6 rounded-xl border ${
           isDark 
             ? 'bg-slate-900/50 border-slate-800' 
@@ -77,7 +76,7 @@ const Settings = () => {
           </div>
         </div>
 
-        {/* Theme Settings Card */}
+   
         <div className={`p-6 rounded-xl border ${
           isDark 
             ? 'bg-slate-900/50 border-slate-800' 
@@ -116,57 +115,8 @@ const Settings = () => {
           </div>
         </div>
 
-        {/* Notification Settings Card */}
-        <div className={`p-6 rounded-xl border ${
-          isDark 
-            ? 'bg-slate-900/50 border-slate-800' 
-            : 'bg-white border-gray-200'
-        }`}>
-          <div className="flex items-center space-x-3 mb-6">
-            <Bell className={`w-5 h-5 ${isDark ? 'text-gray-200' : 'text-gray-900'}`} />
-            <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Notification Settings
-            </h2>
-          </div>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className={`font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  Email Notifications
-                </p>
-                <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>
-                  Receive emails about your task updates
-                </p>
-              </div>
-              <label className="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" className="sr-only peer" defaultChecked />
-                <div className="w-11 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer 
-                              peer-checked:after:translate-x-full peer-checked:after:border-white 
-                              after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
-                              after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all
-                              peer-checked:bg-blue-600"></div>
-              </label>
-            </div>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className={`font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  Push Notifications
-                </p>
-                <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>
-                  Receive push notifications in-app
-                </p>
-              </div>
-              <label className="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" className="sr-only peer" defaultChecked />
-                <div className="w-11 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer 
-                              peer-checked:after:translate-x-full peer-checked:after:border-white 
-                              after:content-[''] after:absolute after:top-[2px] after:left-[2px] 
-                              after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all
-                              peer-checked:bg-blue-600"></div>
-              </label>
-            </div>
-          </div>
-        </div>
+        
+    
 
         {/* Security Settings Card */}
         <div className={`p-6 rounded-xl border ${
