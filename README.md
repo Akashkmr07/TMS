@@ -47,7 +47,7 @@ Lucide React Icons
 ## 🖼️ Screenshots
 
 ### 🔐 Login Page
-![Login Page](['./assests/l.png'](https://github.com/Akashkmr07/TMS/blob/c1e5a489e34a8befb96531f01bcd4b1fab99a07a/assests/a.png))
+![Login Page](https://github.com/Akashkmr07/TMS/blob/c1e5a489e34a8befb96531f01bcd4b1fab99a07a/assests/a.png)
 
 ### 🧾 Task Dashboard
 ![Dashboard]('./assests/a.png')
