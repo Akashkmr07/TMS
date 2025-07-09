@@ -1,9 +1,7 @@
 const Task = require('../models/taskModel');
 const mongoose = require('mongoose');
 
-// @desc    Get all tasks for logged in user
-// @route   GET /api/tasks
-// @access  Private
+
 const getTasks = async(req, res) => {
     try {
         const tasks = await Task.find({
@@ -17,9 +15,7 @@ const getTasks = async(req, res) => {
     }
 };
 
-// @desc    Get archived tasks for logged in user
-// @route   GET /api/tasks/archived
-// @access  Private
+
 const getArchivedTasks = async(req, res) => {
     try {
         const tasks = await Task.find({
@@ -33,9 +29,7 @@ const getArchivedTasks = async(req, res) => {
     }
 };
 
-// @desc    Create a new task
-// @route   POST /api/tasks
-// @access  Private
+
 const createTask = async(req, res) => {
     try {
         const { title, description, dueDate, priority, status, subtasks } = req.body;
@@ -44,7 +38,7 @@ const createTask = async(req, res) => {
             return res.status(400).json({ message: 'Title is required' });
         }
 
-        // Create task with user reference
+     
         const task = await Task.create({
             title,
             description,
@@ -65,15 +59,13 @@ const createTask = async(req, res) => {
     }
 };
 
-// @desc    Update a task
-// @route   PUT /api/tasks/:id
-// @access  Private
+
 const updateTask = async(req, res) => {
     try {
         const { id } = req.params;
         const updates = req.body;
 
-        // Find task and verify ownership
+        
         const task = await Task.findOne({
             _id: id,
             user: req.user.id
@@ -83,16 +75,15 @@ const updateTask = async(req, res) => {
             return res.status(404).json({ message: 'Task not found' });
         }
 
-        // Update subtasks if provided
         if (updates.subtasks) {
-            // Ensure all subtasks have IDs
+           
             updates.subtasks = updates.subtasks.map(st => ({
                 ...st,
                 id: st.id || new mongoose.Types.ObjectId().toString()
             }));
         }
 
-        // Update task
+      
         const updatedTask = await Task.findByIdAndUpdate(
             id, {...updates }, { new: true, runValidators: true }
         );
@@ -104,14 +95,12 @@ const updateTask = async(req, res) => {
     }
 };
 
-// @desc    Delete a task
-// @route   DELETE /api/tasks/:id
-// @access  Private
+
 const deleteTask = async(req, res) => {
     try {
         const { id } = req.params;
 
-        // Find task and verify ownership
+       
         const task = await Task.findOne({
             _id: id,
             user: req.user.id
@@ -121,7 +110,7 @@ const deleteTask = async(req, res) => {
             return res.status(404).json({ message: 'Task not found' });
         }
 
-        await task.deleteOne(); // Changed from remove() to deleteOne()
+        await task.deleteOne(); 
         res.status(200).json({ message: 'Task deleted' });
     } catch (error) {
         console.error('Delete task error:', error);
@@ -129,14 +118,12 @@ const deleteTask = async(req, res) => {
     }
 };
 
-// @desc    Archive a task
-// @route   PUT /api/tasks/:id/archive
-// @access  Private
+
 const archiveTask = async(req, res) => {
     try {
         const { id } = req.params;
 
-        // Find task and verify ownership
+        
         const task = await Task.findOne({
             _id: id,
             user: req.user.id
