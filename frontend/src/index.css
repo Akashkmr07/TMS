@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    background-color: theme('colors.white');
+    color: theme('colors.slate.900');
+}
+
+.dark {
+    background-color: rgb(2 6 23);
+    color: theme('colors.white');
+}
+
+.light {
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+    color: #1a1a1a;
+}
+
+
+/* Additional utility classes */
+
+.bg-gradient-purple {
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+}
+
+.bg-dark {
+    background-color: rgb(2 6 23);
+}
