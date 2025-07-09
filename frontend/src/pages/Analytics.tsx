@@ -16,7 +16,7 @@ const Analytics = () => {
              completedDate.getFullYear() === now.getFullYear();
     });
 
-    // Calculate average resolution time for completed tasks
+    
     const avgResolutionTime = completedTasks.length > 0
       ? completedTasks.reduce((acc, task) => {
           const created = new Date(task.createdAt);
@@ -61,7 +61,7 @@ const Analytics = () => {
     ];
   }, [tasks]);
 
-  // Tab data
+
   const tabs = [
     { id: 'overview', label: 'Overview' },
    
@@ -69,13 +69,13 @@ const Analytics = () => {
 
   return (
     <div className="flex flex-col p-4 sm:p-6 lg:p-8">
-      {/* Header */}
+   
       <div className="mb-8">
         <h1 className="text-xl sm:text-3xl font-bold">Analytics</h1>
         <p className="text-gray-400 mt-1 text-sm sm:text-base">Track your team's productivity and performance</p>
       </div>
 
-      {/* Tabs */}
+   
       <div className="flex space-x-1 mb-6 bg-slate-900/50 p-1 rounded-lg w-fit">
         {tabs.map((tab) => (
           <button
@@ -91,7 +91,6 @@ const Analytics = () => {
         ))}
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
@@ -114,7 +113,7 @@ const Analytics = () => {
         })}
       </div>
 
-      {/* Charts */}
+     
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800">
           <h2 className="text-lg font-semibold mb-6">Task Completion Trend</h2>
