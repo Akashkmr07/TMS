@@ -121,7 +121,7 @@ const AllTasks: React.FC = () => {
           </button>
         </div>
 
-        {/* Search and Filter */}
+        
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-6">
           <div className="flex-1 relative">
             <input
@@ -154,7 +154,7 @@ const AllTasks: React.FC = () => {
           </div>
         </div>
 
-        {/* Tabs */}
+     
         <div className="flex flex-wrap gap-2 sm:gap-4 mb-6">
           {tabs.map((tab) => (
             <button
@@ -170,7 +170,6 @@ const AllTasks: React.FC = () => {
           ))}
         </div>
 
-        {/* Task List */}
         <div className="space-y-4">
           {filteredAndSortedTasks.length === 0 ? (
             <div className="text-center py-12 bg-slate-900/50 rounded-lg border border-slate-800">
@@ -237,7 +236,6 @@ const AllTasks: React.FC = () => {
         </div>
       </div>
 
-      {/* Task Modal */}
       <TaskModal
         isOpen={isModalOpen}
         onClose={() => {
